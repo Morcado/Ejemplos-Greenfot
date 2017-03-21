@@ -30,17 +30,15 @@ public class Ball  extends Actor{
         }
         
         if(nuevoy > mundo.getHeight()){
-            incy = -incy;
-           posx = x;
-           posy = y;
-           this.setLocation(posx, posy);
+           incy = -incy;
+           this.setLocation(x, y);
+           Greenfoot.delay(100);
         }
         
         if(nuevoy < 0){
-            incy = -incy;
-           posx = x;
-           posy = y;
-           this.setLocation(posx, posy);
+           incy = -incy;
+           this.setLocation(x, y);
+           Greenfoot.delay(100);
         }
         
         if(nuevox < 0){

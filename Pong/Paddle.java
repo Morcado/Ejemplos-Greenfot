@@ -4,41 +4,43 @@ public class Paddle  extends Actor{
     private int puntuacion;
     private String con1;
     private String con2;
-    private GreenfootImage punt;
-    private String p2;
+    GreenfootImage punt;
+    private String player;
+    private int ye;
+    private World mundo;
     
-    public Paddle(String c1, String c2){
+    public Paddle(String c1, String c2, String p, int y){
         con1 = c1;
         con2 = c2;
         puntuacion = 0;
-        p2 = "P2: ";
-        punt = new GreenfootImage(p2);
+        player = p;
+        ye = y;
+        mundo = this.getWorld();
+        //punt = new GreenfootImage(10, 100);
     }
     
     @Override
     public void act(){
-        this.dibuja();
+        //this.dibuja();
         
         if(Greenfoot.isKeyDown(con1))
             this.setLocation(this.getX()+5, getY());
+            
         if(Greenfoot.isKeyDown(con2))
             this.setLocation(this.getX()-5, getY());
             
-        if(this.isTouching(Ball.class) && puntuacion <= 5){
+        if(this.isTouching(Ball.class)){
             puntuacion++;
-            
-            
-            punt.drawImage(punt, 10, 10);
+            //this.setLocation(350, ye);
+             mundo.showText(""+puntuacion, 50,50);
         }
         else
             if(puntuacion == 5){
-                
-               punt.drawImage(punt, 10, 10);
+               //Greenfoot.ask("d ");
+               //punt.drawImage(punt, 10, 10);
             }
                 
     }    
     
-    public void dibuja(){
-        punt.drawImage(punt, 10, 100);
-    }
+   
 }

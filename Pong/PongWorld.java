@@ -6,8 +6,8 @@ public class PongWorld  extends World{
     public PongWorld(){    
         super(700, 500, 1);
         
-        Paddle p1 = new Paddle("s", "a");
-        Paddle p2 = new Paddle("right", "left");
+        Paddle p1 = new Paddle("s", "a", "P2", 30);
+        Paddle p2 = new Paddle("right", "left", "P2", 470);
         
         addObject(p1, 350, 30);
         addObject(p2, 350, 470);
